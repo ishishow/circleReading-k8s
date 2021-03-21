@@ -1,5 +1,5 @@
 # circleReading-k8s
-学生団体Volareのteam-cnsf-beginner活動リポジトリ
+学生団体Volareのteam-cncf-beginner活動リポジトリ
 
 ## 概要
 - kubernetes完全ガイド第二版を週に一回30~50ページ読んできて気づいたことの備忘録
