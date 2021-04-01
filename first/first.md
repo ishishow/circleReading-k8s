@@ -50,6 +50,14 @@ Distroless イメージは余分なものが少なく、運用コストが減る
 
 サービス間に依存関係がある場合は、 コンテナのリンク を使います。
 
+## マルチステージビルドについて
+
+[Dockerのマルチステージビルドについて](https://qiita.com/carimatics/items/01663d32bf9983cfbcfe#:~:text=2%E3%81%A4%E3%82%81%E3%81%AE%20FROM%20%E5%91%BD%E4%BB%A4,%E3%81%AF%E4%BF%9D%E5%AD%98%E3%81%95%E3%82%8C%E3%81%BE%E3%81%9B%E3%82%93%E3%80%82)
+
+[公式](https://matsuand.github.io/docs.docker.jp.onthefly/develop/develop-images/multistage-build/)
+
+イメージサイズの削減においてかなり有効です。
+
 ## k8s
 
 ![Kubernetes.png](https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F275351%2Fab09b9fd-4a15-711f-863a-9e5e13126944.png?ixlib=rb-1.2.2&auto=format&gif-q=60&q=75&s=ffce2d11ddf60717f8af109ed65c7e4a)
