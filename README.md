@@ -8,7 +8,7 @@
 
 ## 第 1 回 4/1
 
-第 1 章 Docker の復習と「Hello, Kubernetes
+第 1 章 Docker の復習と Hello, Kubernetes
 
 第 2 章 なぜ Kubernetes が必要なのか？
 
@@ -16,4 +16,9 @@
 
 ## 第 2 回 4/12
 
+<<<<<<< HEAD
 第4章 APIリソースとkubectl
+=======
+第 4 章 APIリソースとcubectl
+
+>>>>>>> a36db381852f79a2705698d96dbce7df3808d93e
