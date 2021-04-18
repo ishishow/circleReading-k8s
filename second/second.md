@@ -1,12 +1,12 @@
 ## 第二回kubectl関連
 
-Namespqceの分割粒度に関して、権限分離性の観点から内クロサービスを開発するチームごとに分割するのが良い。
+Namespqceの分割粒度に関して、権限分離性の観点からマイクロサービスを開発するチームごとに分割するのが良い。
 
 プロダクション環境、ステージング環境、開発環境をnamespaceで分割するのは得策ではなく、クラスタごと分けるべきである。
 
 kubectlはkubeconfig(~/.kube/config)に書かれている情報を使用して接続を行い,kubeconfigもマニフェストと同じフォーマットで記述する。
 
-kubeconfigで具体的に設定を行う部分はclusters/users/contextaの三種類で複数登録可能
+kubeconfigで具体的に設定を行う部分はclusters/users/contextの三種類で複数登録可能
 cluustersには接続先クラスタの情報、usersには認証情報、contextはuserとclustersのペアとnamespaceを定義します。
 
 kubeconfigは直接やkubectlを通して編集できる。（kubectx,kubensもある）

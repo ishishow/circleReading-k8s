@@ -18,3 +18,6 @@
 
 第 4 章 APIリソースとcubectl
 
+## 第 3 回 4/19
+
+第 ５ 章 WorkloadAPI　Deploymentまで
