@@ -14,10 +14,22 @@
 
 第 3 章 Kubernetes 環境の選択肢
 
+[資料](https://github.com/ishishow/circleReading-k8s/tree/main/first)
+
 ## 第 2 回 4/12
 
-第 4 章 APIリソースとcubectl
+第 4 章 API リソースと cubectl
+
+[資料](https://github.com/ishishow/circleReading-k8s/tree/main/second)
 
 ## 第 3 回 4/19
 
-第 ５ 章 WorkloadAPI　Deploymentまで
+第 ５ 章 WorkloadAPI 　 Deployment まで
+
+[資料](https://github.com/ishishow/circleReading-k8s/tree/main/third)
+
+## 第４回 4/26
+
+第５章終わりまで
+
+[資料](https://github.com/ishishow/circleReading-k8s/tree/main/fourth)
