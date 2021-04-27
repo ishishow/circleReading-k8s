@@ -81,13 +81,37 @@ DaemonSet のユースケースとして、全 Node 上で必ず動作させた�
     - sample-statefulset-0, sample-statefulset-1, sample-statefulset-2
     - Pod 名が変わらない
   - データを永続化するための仕組みを有している
-    - Persistent Volume(永続化領域)を使っている場合は　 Pod の再起動時に同じディスクが利用される
+    - Persistent Volume(永続化領域)を使っている場合は　 Pod の再起動時に同じディスクが利用される U
 
-## あとで追加する
+## アップデート戦略
+
+- Deployment や DaemonSet と同様に、StatefulSet のアップデートを行う際にも、アップデート戦略を選択することが可能
+- OnDelete の場合には、StatefulSet のマニフェストが変更された際に Pod の更新はせず、別の要因で Pod が再起動されるときに新しい定義で Pod を作成します。
+- もう一つの RollingUpdate は Deployment と同じく即時 Pod の更新を行なっていきます。StatefulSet のアップデート戦略も RollingUpdaqte がデフォルトです。
+
+### OnDelete
+
+- StatefulSet では、永続化領域を持つデータベースやクラスタなどに利用されることが多いため、手動でアップデートを行なっていきたい場合には Ondelete を使って任意のタイミングや次回再起動時に更新させられるようになっています。
+
+### RollingUpdate
+
+- Deployment と同じく、RollingUpdate を利用した StatefulSet のアップデートを行うことが可能です。しかし、StatefulSet は永続化データがあるため、Deployment とは異なり、余分な Pod を作成してのローリングアップデートはできません。また、一度に停止可能な Pod 数を指定してのローリングアップデートもできず、1 つの Pod ごとに Ready になったことを確認して行われていきます。spec.podMnagementPolicy が Parallel に設定されている場合でも、並列に処理されることはなく、１つずつ Pod のアップデートを行います。また、StatefulSet の RollingUpdate は partition という特有の値を設定することが可能です。
+
+### StatefulSet の削除と PersistentVolume の削除
+
+- StatefulSet を作成すると、Pod に対して PersistentVolumeClaim を設定可能なため、永続化領域も同時に確保できます。この確保した永続化領域は StatefulSet を削除しても同時に解放されることはないです。マネージドサービスの従量課金制の場合はお金がかかるので注意が必要です、
 
 - [関連リンク]（https://cstoku.dev/posts/2018/k8sdojo-13/）
 
 # Job
+
+## 概要
+
+Job はコンテナを利用して一度限りの処理を実行させるリソースです。より厳密な定義としては、N 並列で実行しながら、指定した回数のコンテナの実行を保証するリソースである。
+
+## ReplicaSet との違いとユースケース
+
+Job と ReplicaSet との大きな違いは「起動する Pod が停止することを前提にして作られているかどうか」。基本的に ReplicaSet などでは、Pod の停止は予期せぬエラーであり、一方 Job の場合は、Pod の停止が正常終了と期待される用途に向いている。例えば、「特定のサーバーとの Rsync」や「S3 などの Object Storage へのアップロード」などが挙げられます。
 
 ## Job オブジェクトの必要性
 
@@ -96,3 +120,38 @@ DaemonSet のユースケースとして、全 Node 上で必ず動作させた�
   Job は、処理が正常終了する（終了コード 0 での終了など）まで動く Pod を作成する。
 
 # CronJob
+
+CronJob と Job の関係は Deployment と ReplicaSet の関係に似ています。すなわち、CronJob が Job を管理し、Job が Pod を管理するような 3 そうの親子関係になっています。
+
+## 構造ごとの守備範囲
+
+### CronJob
+
+- Cron フォーマットによる時間の管理
+- 重複するジョブの制御など
+- Job のステータス管理
+- Job が正常に完了したかどうかをモニタリング
+- 過去履歴の保持(成功/失敗それぞれ)
+- データベースのバックアップを定期的に取る
+- npm audit を定期的に実行する
+- 放置されている issue/pull request を定期的に Slack に通知する
+
+### Job
+
+- Pod のコンフィグ管理
+- Pod のステータス管理
+- 失敗時のリトライ有無
+- 失敗時のタイムアウト時間
+- 並行実行数
+- "成功"と判定するために必要な完了数
+- Job は必ずしも CronJob と合わせて使う必要はなく、webhook から作成したりなどイベントドリブンな使い方も想定されている
+
+### Pod
+
+- Job が持つ Pod のコンフィグを継承、任意のイメージで任意のジョブを実行する(Deployment のように継続実行ではなく、ジョブを終えると exit することが期待される)
+
+[メルカリの記事](https://engineering.mercari.com/blog/entry/k8s-cronjob-20200908/)
+
+[Kubernetes の CronJob/Job の仕組みをひもとく](https://qiita.com/tmshn/items/aedf0d739a43a1d6423d)
+
+[kubernetes / Helm 大量の CronJob に悩む貴方に送るプラクティス](https://tech.uzabase.com/entry/2019/10/04/200000)
