@@ -35,3 +35,9 @@
 
 [資料](https://github.com/ishishow/circleReading-k8s/tree/main/fourth)
 [らいちゅーくん資料]()
+
+## 第５回 5/3
+
+第 6 章 LoadBalancer Seervice まで(227p まで)
+
+[資料](https://github.com/ishishow/circleReading-k8s/tree/main/fifth)

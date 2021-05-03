@@ -9,7 +9,7 @@
 - Deploymentの更新の一時停止
 - ローリングアップデート
 - セルフヒーリング（ReplicaSet）
-- ReplicaSetはPodのレプリカを作成し、指定した数のPodを維持し続けるリソースである
+- ReplicaSetはPodのレプリカを作成し、S指定した数のPodを維持し続けるリソースである
 - recreate
 
 
