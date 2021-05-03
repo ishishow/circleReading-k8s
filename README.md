@@ -15,7 +15,8 @@
 第 3 章 Kubernetes 環境の選択肢
 
 [資料](https://github.com/ishishow/circleReading-k8s/tree/main/first)
-[ひらやまくん資料]()
+
+[ひらやまくん資料](https://github.com/ishishow/circleReading-k8s/blob/main/first/0401.pdf)
 
 ## 第 2 回 4/12
 
@@ -34,7 +35,7 @@
 第５章終わりまで
 
 [資料](https://github.com/ishishow/circleReading-k8s/tree/main/fourth)
-[らいちゅーくん資料]()
+[らいちゅーくん資料](https://github.com/ishishow/circleReading-k8s/blob/main/fourth/raityu.md)
 
 ## 第５回 5/3
 
