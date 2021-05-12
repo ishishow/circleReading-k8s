@@ -41,4 +41,11 @@
 
 第 6 章 LoadBalancer Seervice まで(227p まで)
 
-[資料](https://github.com/ishishow/circleReading-k8s/tree/main/fifth)
+[資料](https://github.com/ishishow/circleReading-k8s/tree/main/fifth)s
+## 第6回 5/10
+
+6章終わりまで
+[資料](https://github.com/ishishow/circleReading-k8s/tree/main/sixth)
+
+## 第7回 5/17
+7章PersistentVolumeClaimまで(p301まで)
