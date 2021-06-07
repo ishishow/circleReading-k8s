@@ -1,37 +1,52 @@
-## Welcome to GitHub Pages
+# circleReading-k8s
 
-You can use the [editor on GitHub](https://github.com/ishishow/circleReading-k8s/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+学生団体 Volare の team-cncf-beginner 活動リポジトリ
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## 概要
 
-### Markdown
+- kubernetes 完全ガイド第二版を週に一回 30~50 ページ読んできて気づいたことの備忘録
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## 第 1 回 4/1
 
-```markdown
-Syntax highlighted code block
+第 1 章 Docker の復習と Hello, Kubernetes
 
-# Header 1
-## Header 2
-### Header 3
+第 2 章 なぜ Kubernetes が必要なのか？
 
-- Bulleted
-- List
+第 3 章 Kubernetes 環境の選択肢
 
-1. Numbered
-2. List
+[資料](https://github.com/ishishow/circleReading-k8s/tree/main/first)
 
-**Bold** and _Italic_ and `Code` text
+[ひらやまくん資料](https://github.com/ishishow/circleReading-k8s/blob/main/first/0401.pdf)
 
-[Link](url) and ![Image](src)
-```
+## 第 2 回 4/12
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+第 4 章 API リソースと cubectl
 
-### Jekyll Themes
+[資料](https://github.com/ishishow/circleReading-k8s/tree/main/second)
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/ishishow/circleReading-k8s/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+## 第 3 回 4/19
 
-### Support or Contact
+第 ５ 章 WorkloadAPI 　 Deployment まで
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+[資料](https://github.com/ishishow/circleReading-k8s/tree/main/third)
+
+## 第４回 4/26
+
+第５章終わりまで
+
+[資料](https://github.com/ishishow/circleReading-k8s/tree/main/fourth)
+[らいちゅーくん資料](https://github.com/ishishow/circleReading-k8s/blob/main/fourth/raityu.md)
+
+## 第５回 5/3
+
+第 6 章 LoadBalancer Seervice まで(227p まで)
+
+[資料](https://github.com/ishishow/circleReading-k8s/tree/main/fifth)s
+## 第6回 5/10
+
+6章終わりまで
+[資料](https://github.com/ishishow/circleReading-k8s/tree/main/sixth)
+
+## 第7回 5/17
+7章PersistentVolumeClaimまで(p301まで)
+
